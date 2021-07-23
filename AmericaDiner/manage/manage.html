@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>America Diner Manager</title>
+    <!-- Additional bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Css -->
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/manager.css" rel="stylesheet" />
+    <!-- Script -->
+    <script src="js/manage-js.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <div class="container-fluid title-header p-3" id="top-icons">
+        <div class="row">
+            <div class="col d-flex justify-content-between align-items-baseline flex-wrap">
+                <img src="img/main/AmericaDiner.jpg" />
+                <img src="img/main/BaconAmerica.jpg" />
+            </div>
+        </div>
+    </div>
+    <!-- Top section -->
+    <section id="top-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm" id="handle-orders">
+                    <a href="#orders" class="btn generic-btn my-4 primary-color">
+                        Handle orders
+                    </a>
+                </div>
+                <div class="col-sm" id="add-course">
+                    <a href="#add-course" class="btn generic-btn my-4 primary-color">
+                        Add course
+                    </a>
+                </div>
+                <div class="col-sm" id="delete-course">
+                    <a href="#delete-course" class="btn generic-btn my-4 primary-color">
+                        Delete course
+                    </a>
+                </div>
+                <!--<div class="col-sm" id="edit-course">
+                    <a href="#edit" class="btn generic-btn my-4 primary-color">
+                        Edit course
+                    </a>
+                </div>-->
+            </div>
+        </div>
+    </section>
+    <!-- Handle orders section -->
+    <section id="handle-orders">
+        <span>Orderssss</span>
+    </section>
+    <!-- Add course -->
+    <section id="add-course">
+        <div class="containter">
+            <div class="row">
+                <div class="col form">
+                    <h2>Enter data for new course:</h2>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-lg" name="name" id="name" placeholder="Course name" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-lg" name="description" id="description" placeholder="Course description" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-lg" name="price" id="price" placeholder="Course price" />
+
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-lg" name="mprice" id="mprice" placeholder="Course member price" />
+
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-lg" name="name" id="name" placeholder="Course name" />
+
+                        </div>
+                        <div class="form-group">
+                            <h4>Category:</h4>
+                            <input type="radio" id="cat1" name="category" value="cat1">
+                            <label for="cat1">cat1</label><br>
+                            <input type="radio" id="cat2" name="category" value="cat2">
+                            <label for="cat2">cat2</label><br>
+                            <input type="radio" id="cat3" name="category" value="cat3">
+                            <label for="cat3">cat3</label>
+                        </div>
+                        <div class="form-group">
+                            <h4>Special tags:</h4>
+                            <input type="checkbox" id="stag1" name="stag1" value="Gluten">
+                            <label for="stag1"> Gluten</label>
+                            <input type="checkbox" id="stag2" name="stag2" value="Dairy">
+                            <label for="stag2"> Dairy</label>
+                            <input type="checkbox" id="stag3" name="stag3" value="Spicy">
+                            <label for="stag3"> Spicy</label>
+                        </div>
+                        <input type="submit" value="Add course to menu">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Remove course -->
+    <section id="delete-course">
+        <div class="container">
+            <div class="row">
+                <div class="col form">
+                    <h2>Choose a course to be removed from the menu:</h2>
+                    <form>
+                        <label for="Courses">Choose a course:</label>
+                        <select name="cars" id="cars">
+                            <optgroup label="Swedish Cars">
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                            </optgroup>
+                            <optgroup label="German Cars">
+                                <option value="mercedes">Mercedes</option>
+                                <option value="audi">Audi</option>
+                            </optgroup>
+                        </select>
+                        <br><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

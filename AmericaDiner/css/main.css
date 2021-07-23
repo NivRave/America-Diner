@@ -1,0 +1,210 @@
+﻿body{
+    font-family:Calibri;
+}
+
+a {
+    text-decoration: none;
+}
+
+.title-header button {
+    transition: color 1s ease-in-out 1s; /*slow in n out color change. 1s hover to change, 1s after moving to revert*/
+}
+
+    .title-header button:hover {
+        color: blue; /*change color to blue when hovering over*/
+    }
+
+/* Login page styling*/
+#loginFrom {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+    text-align: center;
+}
+
+/*primary text color - ADD SECOND BLUE AND ADJUST RED*/
+.primary-color {
+    color: red;
+}
+
+#header {
+    min-height: 100vh;
+    background: url(../img/main/MainDiner.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.height-90 {
+}
+
+.generic-btn {
+    color: blue;
+    font-size: 40px;
+    border: 2px solid red;
+    transition: all 1s ease-in-out;
+}
+
+    .generic-btn:hover {
+        color: red;
+        border: 2px solid blue;
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+
+
+
+/*Navbar*/
+
+.navbar{
+    background: white;
+    padding: 20px 20px;
+    transition: all 1.5s ease;
+}
+
+.navbar-background{
+    padding: 5px 20px;
+}
+
+.navbar-brand{
+    font-size: 30px;
+    transition:all 1s ease;
+}
+.navbar-brand:hover {
+    color:blue;
+}
+
+.nav-link{
+    color:red;
+    text-decoration:none;
+    transition: all 2s ease;
+    font-size: 23px;
+}
+
+.nav-link:hover{
+    color:blue;
+}
+
+.nav-btn{
+    background:transparent;
+    color:red;
+    border:2px solid blue;
+    font-size:23px;
+    transition: all 2s ease;
+}
+
+.nav-btn:hover{
+    color:blue;
+    border: 2px solid red;
+    transform:rotate(15deg);
+}
+
+.toggler-btn{
+    border: 2px solid black;
+    padding: 5px;
+    transition: all 2s ease;
+}
+
+.bar{
+    width:30px;
+    height:3px;
+    margin:5px;
+    background:red;
+    transition:all 0.5s ease;
+}
+
+/*.change-navbar .bar1 {
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+
+.change-navbar .bar2 {
+    opacity: 0;
+}
+
+.change-navbar .bar3 {
+    transform: rotate(45deg) translate(-5px,-6px);
+}*/
+
+/*Special items - photos*/
+#special-items {
+    background: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.8)),url(../img/main/Elvis.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/*Menu items*/
+.item-container {
+    position: relative;
+    transition: all 1s ease;
+}
+
+.item-img {
+    transition: all 2s ease-in-out;
+}
+
+.item-link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);/*Fix text to middle*/
+    color: white;
+    opacity:0;
+    transition: all 2s ease;
+}
+
+.text-outline {
+    text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black;
+    /*    text-shadow: 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white;
+*/
+}
+
+.item-container:hover .item-link{
+    opacity:1;
+}
+
+.item-link:hover {
+    color: red;
+    text-shadow: 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px blue, 0 0 4px blue, 0 0 4px blue, 0 0 4px blue, 0 0 4px blue, 0 0 4px blue, 0 0 4px blue, 0 0 4px blue, 0 0 4px blue, 0 0 4px blue, 0 0 4px blue, 0 0 4px blue;
+}
+
+.item-container:hover{
+    outline: 10px solid white;
+    outline-offset: -5px;
+}
+
+/*Single menu item*/
+
+.item-name{
+    color:blue;
+}
+
+.item-description{
+    color:red;
+}
+
+.item-price{
+
+}
+
+.item-tags{
+
+}
+
+/*Menu*/
+#menu {
+    background: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.8)),url(../img/main/MenuBack.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/*About*/
+
+#about {
+    background: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.8)),url(../img/main/AboutBack.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
