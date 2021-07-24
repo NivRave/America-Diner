@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="js/verify-manager.js"></script>
+    <link href="css/login_style.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="containter">
+        <div class="row" id="fr">
+            <div class="col form">
+                <h1>Add a new course</h1>
+                <h3>Enter data for new course:</h3>
+                <form id="admin-form">
+                    <label for="uname"><b>Username:</b></label>
+                    <input class="form-control input-lg" type="text" placeholder="Enter Username" id="uname" name="uname" required>
+                    <label for="psw"><b>Password:</b></label>
+                    <input class="form-control input-lg" type="password" placeholder="Enter Password" id="psw" name="psw" required>
+                    <button class="guestButton" type="submit" onclick="checkInput()">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!--<div class="col login-button p-2">
+        <button class="adminButton" onclick="document.getElementById('adminLogin').style.display='block'" style="width:auto;">Admin Login</button>
+        <div id="adminLogin" class="modal">
+            <form class="modal-content animate" id="admin-form" method="post">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('adminLogin').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <img src="img/Login/Manager.jpg" alt="Avatar" class="avatar" />
+                </div>
+                <div class="loginBtn">
+                    <label for="uname"><b>Username:</b></label>
+                    <input type="text" placeholder="Enter Username" id="uname" name="uname" required>
+                    <label for="psw"><b>Password:</b></label>
+                    <input type="password" placeholder="Enter Password" id="psw" name="psw" required>
+                    <button class="guestButton" type="submit" onclick="checkInput()">Login</button>
+                </div>
+
+                <div class="loginBtn" style="background-color:#f1f1f1">
+                    <button type="button" onclick="document.getElementById('adminLogin').style.display='none'" class="cancelbtn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    -->
+    <!--Signup Modal-->
+    <script>
+        //var m1 = document.getElementById('adminLogin');
+        //window.onclick = function (event) {
+        //    if (event.target == m1) {
+        //        m1.style.display = "none";
+        //    }
+        //}
+
+        function checkInput() {
+            let u = document.getElementById('admin-form');
+            let name = u.elements['uname'].value;
+            let pass = u.elements['psw'].value;
+            if (verifyManager(name, pass) == true) {
+                addManageBtn();
+            }
+            else {
+                addReturnBtn();
+                alert('Not authorized to manage');
+            }
+        }
+
+        function addManageBtn() {
+            localStorage.setItem("isAdmin", "true");
+            let st = '<div class="col" id="forwardBtn"><a href="manage.html" class="btn generic-btn my-4 primary-color">Welcome admin, click to continue</a></div >';
+            document.getElementById('fr').innerHTML += st;
+        }
+
+        function addReturnBtn() {
+            localStorage.setItem("isAdmin", "true");
+            let st = '<div class="col" id="forwardBtn"><a href="index.html" class="btn generic-btn my-4 primary-color">Try again or click to return to restaurant menu</a></div >';
+            document.getElementById('fr').innerHTML += st;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>America Diner Manager</title>
+    <!-- Additional bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Css -->
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/manager.css" rel="stylesheet" />
+    <!-- Script -->
+    <script src="js/script-m.js"></script>
+    <script src="js/course-object.js"></script>
+    <script src="js/objects.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/manage-js.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <div class="container-fluid title-header p-3" id="top-icons">
+        <div class="row">
+            <div class="col d-flex justify-content-between align-items-baseline flex-wrap">
+                <img src="img/main/AmericaDiner.jpg" />
+                <img src="img/main/BaconAmerica.jpg" />
+            </div>
+        </div>
+    </div>
+    <!-- Top section -->
+
+    <nav class="navbar navbar-m navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="">Welcome<br /> Manager!</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link manager-nav-link" href="index.html">Restaurant website</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link manager-nav-link" href="#menu-management">Menu management</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link manager-nav-link" href="#order-management">Orders management</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link manager-nav-link" href="#clients-management">Clients management</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link manager-nav-link" href="#">Top</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="help.html">Help</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html" onclick="adminLogout()">Logout</a>
+                </li>
+                <!--<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+    </li>-->
+            </ul>
+            <!--<form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>-->
+        </div>
+    </nav>
+
+    <!-- Seperator section -->
+    <section id="seperator">
+        <!-- Add data if needed -->
+    </section>
+
+    <!-- Handle orders section -->
+    <section id="order-management">
+        <span>Orderssss</span>
+    </section>
+    <!-- Add course -->
+    <section id="menu-management">
+        <div class="containter">
+            <div class="row">
+                <div class="col form">
+                    <h1>Add a new course</h1>
+                    <h3>Enter data for new course:</h3>
+                    <form id="addCourseForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control input-lg" name="name" id="name" placeholder="Course name" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-lg" name="description" id="description" placeholder="Course description" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-lg" name="price" id="price" placeholder="Course price" />
+
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-lg" name="mprice" id="mprice" placeholder="Course member price" />
+                        </div>
+                        <div class="form-group">
+                            <h4>Category:</h4>
+                            <input type="radio" id="cat1" name="category" value="light">
+                            <label for="cat1">Light</label>
+                            <input type="radio" id="cat2" name="category" value="dirty">
+                            <label for="cat2">Dirty</label>
+                            <input type="radio" id="cat3" name="category" value="desert">
+                            <label for="cat3">Desert</label>
+                            <input type="radio" id="cat4" name="category" value="drinks">
+                            <label for="cat4">Drinks</label>
+                        </div>
+                        <div class="form-group">
+                            <h4>Special tags:</h4>
+                            <input type="checkbox" id="stag1" name="stag1" value="Gluten">
+                            <label for="stag1"> Gluten</label>
+                            <input type="checkbox" id="stag2" name="stag2" value="Dairy">
+                            <label for="stag2"> Dairy</label>
+                            <input type="checkbox" id="stag3" name="stag3" value="Spicy">
+                            <label for="stag3"> Spicy</label>
+                        </div>
+                        <!--<input type="submit" value="Add course to menu" onclick="createCourse(name,description,price,mprice,'',category,'')">-->
+                        <input type="submit" value="Add course to menu" onclick="createCourse()">
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+    <!-- Remove course -->
+        <div class="container">
+            <div class="row">
+                <div class="col form">
+                    <h1>Remove an existing course</h1>
+                    <button type="button" onclick="setDelCourses()">Choose a course to remove:</button>               
+        <form id="removeCourseForm">
+                        <label for="Courses">Choose a course:</label>
+                        <select name="courseNames" id="courseNames">  
+                        </select>
+                        <br><br>
+                        <input type="submit" value="Remove selected course" onclick="removeSelected()">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="clients-management">
+        Clientss
+    </section>
+    <script>
+        function createCourse() {
+            let f = document.getElementById('addCourseForm');
+            let name = f.elements['name'].value;
+            let description = f.elements['description'].value;
+            let price = f.elements['price'].value;
+            let mPrice = f.elements['mprice'].value;
+            let img = '';
+            let category = f.elements['category'].value;
+            let sTags = '';
+            createCourse2(name, description, price, mPrice, img, category, sTags);
+        }
+        function createCourse2(name, description, price, mPrice, img, category, sTags) {
+            var courses = JSON.parse(localStorage.getItem('courses'));
+            let c = new courseObj(name, description, price, mPrice, img, category, sTags);
+            c = courseToJson(c);
+            courses.push(c);
+            updateCourses(courses);
+        }
+        function setDelCourses() {
+            setRemCourses();
+        }
+
+        function removeSelected() {
+            var c = document.getElementById('courseNames');
+            var name = c.options[c.selectedIndex].text;
+            deleteCourse(name);
+            setDelCourses();
+        }
+
+        function adminLogout() {
+            localStorage.setItem("isAdmin", "false");
+        }
+    </script>
+</body>
+</html>

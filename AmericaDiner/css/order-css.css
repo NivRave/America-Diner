@@ -1,0 +1,8 @@
+﻿/*Menu*/
+#menu {
+    background: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.8)),url(../img/main/MenuBack.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:40%;
+}

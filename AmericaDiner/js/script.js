@@ -1,4 +1,6 @@
 ﻿$(document).ready(function () {
+    //on-load method to get data from localhost and keep the menu up-to-date
+    $("#menu").on("load",updateMenu());
 
     $('.navbar-toggler').click(function () {
         $('.navbar-toggler').toggleClass('change-navbar')
@@ -8,21 +10,21 @@
     $(window).scroll(function () {
         let position = $(this).scrollTop();
         if (position >= 1220) {
-            $('.navbar').addClass('navbar-background');
-            $('.navbar').addClass('fixed-top');
+            $('.navbar-i').addClass('navbar-background');
+            $('.navbar-i').addClass('fixed-top');
         }
         else {
-            $('.navbar').removeClass('navbar-background');
-            $('.navbar').removeClass('fixed-top');
+            $('.navbar-i').removeClass('navbar-background');
+            $('.navbar-i').removeClass('fixed-top');
         }
     })
 
     /*Smooth scroll*/
-    $('nav-item a').clicl(function () {
+    $('nav-item a').click(function () {
         link.preventDefault;
-        let targer = $(this).attr('href');
+        let target = $(this).attr('href');
         $('html', 'body').animate({
-            scrollTop: $(targer).offset().top - 25
+            scrollTop: $(target).offset().top - 25
         }, 2000);
     })
 

@@ -13,9 +13,9 @@
     <!-- Css -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="Magnific/magnific-popup.css" rel="stylesheet" />
+    <link href="css/login_style.css" rel="stylesheet" />
     <!-- my css -->
     <link href="css/main.css" rel="stylesheet" />
-
     <!-- Script -->
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
@@ -23,7 +23,9 @@
     <!-- my scripts -->
     <script src="js/script.js"></script>
     <script src="js/objects.js"></script>
-
+    <script src="js/course-object.js"></script>
+    <script src="js/basic-setup.js"></script>
+    <script src="js/loginJS.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -36,44 +38,107 @@
         </div>
     </div>
 
-    <!-- Section -->
+    <!-- Action Section -->
     <section id="header">
         <div class="container">
             <div class="row height-90 align-items-center justify-content-center">
                 <div class="col">
                     <div class="banner text-center">
-                        <a href="" class="btn generic-btn my-4 primary-color">
-                            See courses
-                        </a>
+                        <button class="btn generic-btn my-4 primary-color" id="restartBtn" onclick="restart()">
+                            Restart restaurant
+                        </button>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="banner text-center">
-                        <a href="" class="btn generic-btn my-4 primary-color">
-                            Menu
+                    <div class="banner text-center" id="mngBtn">
+                        <a href="verify-manager.html" class="btn generic-btn my-4 primary-color">
+                            Manage
                         </a>
                     </div>
                 </div>
-                <div class="col">
+                <!--<div class="col">
                     <div class="banner text-center">
-                        <a href="" class="btn generic-btn my-4 primary-color">
-                            About us
-                        </a>
+                        <button class="btn generic-btn my-4 primary-color" id="updateBtn" onclick="updateMenu()">
+                            Update
+                        </button>
+                    </div>
+                </div>-->
+                <!--Login button-->
+                <div class="col login-button p-2">
+                    <button class="adminButton" onclick="document.getElementById('adminLgn').style.display='block'" style="width:auto;">Login</button>
+                    <div id="adminLgn" class="modal">
+                        <form class="modal-content animate" action="/action_page.php" method="post">
+                            <div class="imgcontainer">
+                                <span onclick="document.getElementById('adminLgn').style.display='none'" class="close" title="Close Modal">&times;</span>
+                                <img src="img/Login/EatingPerson.jpg" alt="Avatar" class="avatar" />
+                            </div>
+                            <div class="loginBtn">
+                                <label for="uname"><b>Username:</b></label>
+                                <input type="text" placeholder="Enter Username" name="uname" required>
+                                <label for="psw"><b>Password:</b></label>
+                                <input type="password" placeholder="Enter Password" name="psw" required>
+                                <button class="guestButton" type="submit">Login</button>
+                                <label>
+                                    <input type="checkbox" checked="checked" name="remember">Remember me
+                                </label>
+                            </div>
+
+                            <div class="loginBtn" style="background-color:#f1f1f1">
+                                <button type="button" onclick="document.getElementById('adminLgn').style.display='none'" class="cancelbtn">Cancel</button>
+                                <span class="psw">Forgot <a href="#">password?</a></span>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="banner text-center">
-                        <a href="" class="btn generic-btn my-4 primary-color">
-                            Make an order
-                        </a>
+                <!--Signup button-->
+                <div class="col login-button p-2">
+                    <button class="adminButton" onclick="document.getElementById('signup').style.display='block'" style="width:auto;">signup</button>
+                    <div id="signup" class="modal">
+                        <form class="modal-content animate" action="/action_page.php" method="post">
+                            <div class="imgcontainer">
+                                <span onclick="document.getElementById('signup').style.display='none'" class="close" title="Close Modal">&times;</span>
+                                <img src="img/Login/EatingPerson.jpg" alt="Avatar" class="avatar" />
+                            </div>
+                            <div class="loginBtn">
+                                <label for="uname"><b>Username:</b></label>
+                                <input type="text" placeholder="Enter Username" name="uname" required>
+                                <label for="psw"><b>Password:</b></label>
+                                <input type="password" placeholder="Enter Password" name="psw" required>
+                                <button class="guestButton" type="submit">Sign up</button>
+                            </div>
+
+                            <div class="loginBtn" style="background-color:#f1f1f1">
+                                <button type="button" onclick="document.getElementById('signup').style.display='none'" class="cancelbtn">Cancel</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
+                <!--Signup Modal-->
+                <script>
+                    var m1 = document.getElementById('signup');
+                    var m2 = document.getElementById('adminLgn');
+                    window.onclick = function (event) {
+                        if (event.target == m1) {
+                            m1.style.display = "none";
+                        }
+                        else if (event.target == m2) {
+                            m2.style.display = "none";
+                        }
+                    }
+                </script>
+                <!--<div class="col">
+        <div class="banner text-center">
+            <a href="" class="btn generic-btn my-4 primary-color">
+                Login
+            </a>
+        </div>
+    </div>-->
             </div>
         </div>
     </section>
 
     <!-- Navigation bar -->
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-i navbar-expand-lg">
         <a href="#" class="navbar-brand primary-color">America diner</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
             Options
@@ -83,7 +148,7 @@
                 <div class="bar bar3"></div>
             </div>
         </button>
-         <!--links--> 
+        <!--links-->
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
@@ -195,84 +260,20 @@
                     <div class="row" id="light">
                         <div class="col">
                             <h1 class="primary-color">
-                                First
+                                Light stuff
                             </h1>
                         </div>
                     </div>
-                    <!-- Single course -->
-                    <div class="menu-item d-flex justify-content-between my-3 p-3">
-                        <div class="menu-item-text">
-                            <h2 class="item-name">Name</h2>
-                            <h4 class="item-description">A few words about the course</h4>
-                            <h6 class="item-tags">Gluten, Spicy</h6>
-                        </div>
-                        <div class="menu-item-price align-self-end">
-                            <h1 class="item-price">30</h1>
-                        </div>
-                    </div>
-                    <!-- Single course -->
-                    <div class="menu-item d-flex justify-content-between my-3 p-3">
-                        <div class="menu-item-text">
-                            <h2 class="item-name">Name</h2>
-                            <h4 class="item-description">A few words about the course</h4>
-                            <h6 class="item-tags">Gluten, Spicy</h6>
-                        </div>
-                        <div class="menu-item-price align-self-end">
-                            <h1 class="item-price">30</h1>
-                        </div>
-                    </div>
-                    <!-- Single course -->
-                    <div class="menu-item d-flex justify-content-between my-3 p-3">
-                        <div class="menu-item-text">
-                            <h2 class="item-name">Name</h2>
-                            <h4 class="item-description">A few words about the course</h4>
-                            <h6 class="item-tags">Gluten, Spicy</h6>
-                        </div>
-                        <div class="menu-item-price align-self-end">
-                            <h1 class="item-price">30</h1>
-                        </div>
-                    </div>
+
                     <!-- Second category -->
                     <div class="row" id="dirty">
                         <div class="col">
                             <h1 class="primary-color">
-                                Second
+                                Very dirty
                             </h1>
                         </div>
                     </div>
-                    <!-- Single course -->
-                    <div class="menu-item d-flex justify-content-between my-3 p-3">
-                        <div class="menu-item-text">
-                            <h2 class="item-name">Name</h2>
-                            <h4 class="item-description">A few words about the course</h4>
-                            <h6 class="item-tags">Gluten, Spicy</h6>
-                        </div>
-                        <div class="menu-item-price align-self-end">
-                            <h1 class="item-price">30</h1>
-                        </div>
-                    </div>
-                    <!-- Single course -->
-                    <div class="menu-item d-flex justify-content-between my-3 p-3">
-                        <div class="menu-item-text">
-                            <h2 class="item-name">Name</h2>
-                            <h4 class="item-description">A few words about the course</h4>
-                            <h6 class="item-tags">Gluten, Spicy</h6>
-                        </div>
-                        <div class="menu-item-price align-self-end">
-                            <h1 class="item-price">30</h1>
-                        </div>
-                    </div>
-                    <!-- Single course -->
-                    <div class="menu-item d-flex justify-content-between my-3 p-3">
-                        <div class="menu-item-text">
-                            <h2 class="item-name">Name</h2>
-                            <h4 class="item-description">A few words about the course</h4>
-                            <h6 class="item-tags">Gluten, Spicy</h6>
-                        </div>
-                        <div class="menu-item-price align-self-end">
-                            <h1 class="item-price">30</h1>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="col-md-6">
                     <!-- right col -->
@@ -280,82 +281,16 @@
                     <div class="row" id="desert">
                         <div class="col">
                             <h1 class="primary-color">
-                                Third
+                                Sweets
                             </h1>
-                        </div>
-                    </div>
-                    <!-- Single course -->
-                    <div class="menu-item d-flex justify-content-between my-3 p-3">
-                        <div class="menu-item-text">
-                            <h2 class="item-name">Name</h2>
-                            <h4 class="item-description">A few words about the course</h4>
-                            <h6 class="item-tags">Gluten, Spicy</h6>
-                        </div>
-                        <div class="menu-item-price align-self-end">
-                            <h1 class="item-price">30</h1>
-                        </div>
-                    </div>
-                    <!-- Single course -->
-                    <div class="menu-item d-flex justify-content-between my-3 p-3">
-                        <div class="menu-item-text">
-                            <h2 class="item-name">Name</h2>
-                            <h4 class="item-description">A few words about the course</h4>
-                            <h6 class="item-tags">Gluten, Spicy</h6>
-                        </div>
-                        <div class="menu-item-price align-self-end">
-                            <h1 class="item-price">30</h1>
-                        </div>
-                    </div>
-                    <!-- Single course -->
-                    <div class="menu-item d-flex justify-content-between my-3 p-3">
-                        <div class="menu-item-text">
-                            <h2 class="item-name">Name</h2>
-                            <h4 class="item-description">A few words about the course</h4>
-                            <h6 class="item-tags">Gluten, Spicy</h6>
-                        </div>
-                        <div class="menu-item-price align-self-end">
-                            <h1 class="item-price">30</h1>
                         </div>
                     </div>
                     <!-- Fourth category -->
                     <div class="row" id="drinks">
                         <div class="col">
                             <h1 class="primary-color">
-                                Fourth
+                                Drinks
                             </h1>
-                        </div>
-                    </div>
-                    <!-- Single course -->
-                    <div class="menu-item d-flex justify-content-between my-3 p-3">
-                        <div class="menu-item-text">
-                            <h2 class="item-name">Name</h2>
-                            <h4 class="item-description">A few words about the course</h4>
-                            <h6 class="item-tags">Gluten, Spicy</h6>
-                        </div>
-                        <div class="menu-item-price align-self-end">
-                            <h1 class="item-price">30</h1>
-                        </div>
-                    </div>
-                    <!-- Single course -->
-                    <div class="menu-item d-flex justify-content-between my-3 p-3">
-                        <div class="menu-item-text">
-                            <h2 class="item-name">Name</h2>
-                            <h4 class="item-description">A few words about the course</h4>
-                            <h6 class="item-tags">Gluten, Spicy</h6>
-                        </div>
-                        <div class="menu-item-price align-self-end">
-                            <h1 class="item-price">30</h1>
-                        </div>
-                    </div>
-                    <!-- Single course -->
-                    <div class="menu-item d-flex justify-content-between my-3 p-3">
-                        <div class="menu-item-text">
-                            <h2 class="item-name">Name</h2>
-                            <h4 class="item-description">A few words about the course</h4>
-                            <h6 class="item-tags">Gluten, Spicy</h6>
-                        </div>
-                        <div class="menu-item-price align-self-end">
-                            <h1 class="item-price">30</h1>
                         </div>
                     </div>
                 </div>
@@ -401,47 +336,23 @@
                             <h1 class="item-price">30</h1>
                         </div>
                     </div>-->
-
-
-    <!-- Login button+modal -->
-    <!--<div class="login-button p-2">
-        <button class="adminButton" onclick="document.getElementById('adminLgn').style.display='block'" style="width:auto;">Login</button>
-        <div id="adminLgn" class="modal">
-            <form class="modal-content animate" action="/action_page.php" method="post">
-                <div class="imgcontainer">
-                    <span onclick="document.getElementById('adminLgn').style.display='none'" class="close" title="Close Modal">&times;</span>
-                    <img src="Img/Manager.jpg" alt="Avatar" class="avatar" />
-                </div>
-                <div class="loginBtn">
-                    <label for="uname"><b>Username:</b></label>
-                    <input type="text" placeholder="Enter Username" name="uname" required>
-                    <label for="psw"><b>Password:</b></label>
-                    <input type="password" placeholder="Enter Password" name="psw" required>
-                    <button class="guestButton" type="submit">Login</button>
-                    <label>
-                        <input type="checkbox" checked="checked" name="remember">Remember me
-                    </label>
-                </div>
-
-                <div class="loginBtn" style="background-color:#f1f1f1">
-                    <button type="button" onclick="document.getElementById('adminLgn').style.display='none'" class="cancelbtn">Cancel</button>
-                    <span class="psw">Forgot <a href="#">password?</a></span>
-                </div>
-            </form>
-        </div>
-    </div>-->
-    <!-- Login Modal -->
-    <!--<script>
-        // Get the modal
-        var modal = document.getElementById('adminLgn');
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
+     
+    <script>
+        restart = function () {
+            resetMenu();
+            let courses = new basicSetup().getBasicMenu();
+            diner = new restObj(courses, "true");
+            diner.firstSetUp(courses, "true");
+            let dinerStr = JSON.stringify(diner);
+            //resetState(diner);
         }
-    </script>-->
+
+        resetState = function (diner) {
+            localStorage.clear();
+            localStorage.setItem("menu", JSON.stringify(diner.menu));
+            localStorage.setItem("courses", JSON.stringify(diner.courses));
+        }
+    </script>
 </body>
 </html>
 
