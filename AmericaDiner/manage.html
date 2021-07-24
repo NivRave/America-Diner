@@ -88,7 +88,15 @@
 
     <!-- Handle orders section -->
     <section id="order-management">
-        <span>Orderssss</span>
+    <div class="container">
+        <div class="row">
+            <div class="col" id="openOrders">
+                <table class="openOrdersTbl" id="openOrdersTbl">
+
+                </table>
+            </div>
+        </div>
+    </div>
     </section>
     <!-- Add course -->
     <section id="menu-management">
@@ -180,7 +188,6 @@
         function setDelCourses() {
             setRemCourses();
         }
-
         function removeSelected() {
             var c = document.getElementById('courseNames');
             var name = c.options[c.selectedIndex].text;

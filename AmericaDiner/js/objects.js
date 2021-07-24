@@ -12,6 +12,7 @@
         //this.setDb(db);
         //this.setMenu(this.courses);
         localStorage.setItem("isMember", "false");
+        localStorage.setItem("isAdmin", "false");
     }
 
     //this.setMenu = function (courses) {

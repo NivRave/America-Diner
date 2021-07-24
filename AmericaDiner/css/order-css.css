@@ -1,8 +1,23 @@
 ﻿/*Menu*/
-#menu {
+#orderMenu {
     background: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.8)),url(../img/main/MenuBack.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    width:40%;
+}
+
+.order-item-name{
+    height:35px;
+    border:1px solid black;
+    font-weight:bold;
+}
+
+.order-item-description {
+    height: 35px;
+    border: 1px solid black;
+}
+
+.order-item-quantity {
+    height: 35px;
+    border: 1px solid black;
 }
