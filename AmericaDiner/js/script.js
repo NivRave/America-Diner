@@ -1,7 +1,11 @@
-﻿$(document).ready(function () {
-    //on-load method to get data from localhost and keep the menu up-to-date
-    $("#menu").on("load",updateMenu());
+﻿/*Custom scripts for the index-landing page*/
 
+$(document).ready(function () {
+    //on-load method to get data from localhost and keep the menu up-to-date
+    $("#menu").on("load", updateMenu());
+    //on-load method to update the photo gallery
+    $("#image-gallery").on("load", updateGallery());
+    //navbar toggler
     $('.navbar-toggler').click(function () {
         $('.navbar-toggler').toggleClass('change-navbar')
     })

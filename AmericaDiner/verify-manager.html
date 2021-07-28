@@ -1,62 +1,48 @@
-﻿<!DOCTYPE html>
+﻿<!--This page is a transition and verification phase in the admin-login/management process.
+It is a form accepting uname/pw input and gives access to the management interface if correct.-->
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>America Diner Management Verification</title>
+    <!-- Additional bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!--JS scripts-->
     <script src="js/verify-manager.js"></script>
+    <!--Css stylesheets-->
     <link href="css/login_style.css" rel="stylesheet" />
     <link href="css/main.css" rel="stylesheet" />
 </head>
 <body>
-
     <div class="containter">
         <div class="row" id="fr">
             <div class="col form">
-                <h1>Add a new course</h1>
-                <h3>Enter data for new course:</h3>
+                <h1>Enter your credentials to login as an admin.</h1>
+                <span>If you are not an admin please </span><a href="index.html"> return to the main page</a>
                 <form id="admin-form">
                     <label for="uname"><b>Username:</b></label>
                     <input class="form-control input-lg" type="text" placeholder="Enter Username" id="uname" name="uname" required>
                     <label for="psw"><b>Password:</b></label>
                     <input class="form-control input-lg" type="password" placeholder="Enter Password" id="psw" name="psw" required>
-                    <button class="guestButton" type="submit" onclick="checkInput()">Login</button>
+                    <button class="guestButton" type="button" onclick="checkInput()">Login</button>
                 </form>
             </div>
         </div>
     </div>
-    
-    <!--<div class="col login-button p-2">
-        <button class="adminButton" onclick="document.getElementById('adminLogin').style.display='block'" style="width:auto;">Admin Login</button>
-        <div id="adminLogin" class="modal">
-            <form class="modal-content animate" id="admin-form" method="post">
-                <div class="imgcontainer">
-                    <span onclick="document.getElementById('adminLogin').style.display='none'" class="close" title="Close Modal">&times;</span>
-                    <img src="img/Login/Manager.jpg" alt="Avatar" class="avatar" />
-                </div>
-                <div class="loginBtn">
-                    <label for="uname"><b>Username:</b></label>
-                    <input type="text" placeholder="Enter Username" id="uname" name="uname" required>
-                    <label for="psw"><b>Password:</b></label>
-                    <input type="password" placeholder="Enter Password" id="psw" name="psw" required>
-                    <button class="guestButton" type="submit" onclick="checkInput()">Login</button>
-                </div>
+    <div class="container">
+        <div class="row">
+            <div class="col"  id="nextLink">
 
-                <div class="loginBtn" style="background-color:#f1f1f1">
-                    <button type="button" onclick="document.getElementById('adminLogin').style.display='none'" class="cancelbtn">Cancel</button>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
-    -->
-    <!--Signup Modal-->
-    <script>
-        //var m1 = document.getElementById('adminLogin');
-        //window.onclick = function (event) {
-        //    if (event.target == m1) {
-        //        m1.style.display = "none";
-        //    }
-        //}
 
+    <script>
+        //Input check method
         function checkInput() {
             let u = document.getElementById('admin-form');
             let name = u.elements['uname'].value;
@@ -69,17 +55,18 @@
                 alert('Not authorized to manage');
             }
         }
-
+        //Add transition link if credentials are correct
         function addManageBtn() {
             localStorage.setItem("isAdmin", "true");
+            localStorage.setItem('mEntry', '0');
             let st = '<div class="col" id="forwardBtn"><a href="manage.html" class="btn generic-btn my-4 primary-color">Welcome admin, click to continue</a></div >';
-            document.getElementById('fr').innerHTML += st;
+            document.getElementById('nextLink').innerHTML = st;
         }
-
+        //Add return link if credentials are incorrect
         function addReturnBtn() {
-            localStorage.setItem("isAdmin", "true");
+            localStorage.setItem("isAdmin", "false");
             let st = '<div class="col" id="forwardBtn"><a href="index.html" class="btn generic-btn my-4 primary-color">Try again or click to return to restaurant menu</a></div >';
-            document.getElementById('fr').innerHTML += st;
+            document.getElementById('nextLink').innerHTML = st;
         }
     </script>
 </body>

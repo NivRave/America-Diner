@@ -1,34 +1,32 @@
-﻿<!DOCTYPE html>
+﻿<!--This page is the guest/client order interface.
+It contains the updated menu and the order form.-->
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Order food</title>
-
+    <title>America Diner Order Food</title>
     <!-- Additional bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-    <!-- Css -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="Magnific/magnific-popup.css" rel="stylesheet" />
-    <link href="css/login_style.css" rel="stylesheet" />
-    <!-- my css -->
-    <!--<link href="css/main.css" rel="stylesheet" />-->
-    <link href="css/order-css.css" rel="stylesheet" />
-    <!-- Script -->
+    <!--JS scripts-->
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="Magnific/jquery.magnific-popup.js"></script>
-    <!-- my scripts -->
     <script src="js/script-order.js"></script>
     <script src="js/objects.js"></script>
     <script src="js/course-object.js"></script>
     <script src="js/basic-setup.js"></script>
+    <!--Css stylesheets-->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="Magnific/magnific-popup.css" rel="stylesheet" />
+    <link href="css/login_style.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/order-css.css" rel="stylesheet" />
 </head>
 <body>
-
     <!-- Header -->
     <div class="container-fluid title-header p-3" id="top-icons">
         <div class="row">
@@ -38,6 +36,33 @@
             </div>
         </div>
     </div>
+
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg">
+        <a href="#" class="navbar-brand primary-color">America diner</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+            Options
+            <div class="toggler-btn">
+                <div class="bar bar1"></div>
+                <div class="bar bar2"></div>
+                <div class="bar bar3"></div>
+            </div>
+        </button>
+        <!--Navbar links-->
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link link">Back to restaurant</a>
+                </li>
+                <li class="nav-item">
+                    <a href="verify-manager.html" class="nav-link">Manage</a>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#helpModal" disabled>Help</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
     <!-- Menu area -->
     <section id="orderMenu" class="py-5 my-5">
@@ -61,7 +86,6 @@
                             </h2>
                         </div>
                     </div>
-
                 </div>
                 <div class="col-md-6">
                     <!-- right col -->
@@ -85,146 +109,58 @@
             </div>
         </div>
     </section>
-
+    <!--Order form-->
     <section id="orderForm">
-        <div class="container">
+        <div class="container" id="orderContainer">
             <div class="row">
-                <div class="col-2" id="courseNames">
+                <div class="col-xs-12 col-md-11 " id="courseNames">
                     <h2>You eat:</h2>
                 </div>
-                <div class="col" id="courseDescription">
-                    <h2>What you get:</h2>
-                </div>
-                <div class="col-1" id="courseAmount">
+                <div class="col-xs-12 col-md-1" id="courseAmount">
                     <h2>Quantity:</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <input type="button" value="Clear order" id="clearOrder" onclick="clearForm()"/>
-                </div>
-                <div class="col">
-                    <input type="button" value="Submit order" id="submitOrder" onclick="submitOrder()"/>
-                </div>
-                <div class="col">
-                    <input type="button" value="Save order" id="saveOrder" onclick="saveOrder()"/>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Help modal -->
+    <!-- Modal -->
+    <div id="helpModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="img/Manager/Help.jpg" alt="Avatar" class="avatar modal-header" />
+                </div>
+                <div class="modal-body">
+                    <p>
+                        <span class="pHeader">Welcome client!</span><br>
+                        View our amazing menu below, decide what amazing courses you would like to eat and use the order form to make an order.<br />
+                        We are proud to announce that we will be accepting credit card, cash and even Crypto payments, just choose whatever fits you the most!<br />
+                        You can view your current order summary before submitting by clicking the 'Your order info' button.<br />
+                        After you place your order, the food will be at your place by 30 minutes max!<br />
+                        If you are a registered America Diner member, go back to the main page and make sure that you logged in to get your deserved discounts!<br />
+                        Have an <span class="pHeader">Amazing</span> day!
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        //Add additional necessary data according to the checked payment method
+        function setPaymentMethod() {
+            var credit = document.getElementById("creditCard");
+            var creditData = document.getElementById("creditData");
+            creditData.style.display = credit.checked ? "block" : "none";
+            var crypto = document.getElementById("crypto");
+            var cryptoData = document.getElementById("cryptoData");
+            cryptoData.style.display = crypto.checked ? "block" : "none";
+        }
+    </script>
 </body>
 </html>
-
-<!--<form name="tblform">
-    <table width="80%" id="alignment">
-        <tr>
-            <th>Food Item</th>
-            <th> </th>
-            <th>Quantity</th>
-            <th>Price</th>
-        </tr>
-        <tr>
-            <td>Item 1:</td>
-            <td>
-                <select id="item1">
-                    <option value="1">--Select Item--</option>
-                    <option value="Chicken pizza">Chicken pizza</option>
-                    <option value="Vegetable Pizza">Vegetable Pizza</option>
-                    <option value="Chicken Kottu">Chicken Kottu</option>
-                    <option value="Vegetable Kottu">Vegetable Kottu</option>
-                    <option value="Water Bottle ">Water Bottle </option>
-                </select>
-            </td>
-            <td><input type="number" value="0" id="q1"></td>
-            <td><input type="text" id="p1"></td>
-        </tr>
-        <tr>
-            <td>Item 2:</td>
-            <td>
-                <select id="item2">
-                    <option value="1">--Select Item--</option>
-                    <option value="Chicken pizza">Chicken pizza</option>
-                    <option value="Vegetable Pizza">Vegetable Pizza</option>
-                    <option value="Chicken Kottu">Chicken Kottu</option>
-                    <option value="Vegetable Kottu">Vegetable Kottu</option>
-                    <option value="Water Bottle ">Water Bottle </option>
-                </select>
-            </td>
-            <td><input type="number" value="0" id="q2"></td>
-            <td><input type="text" id="p2"></td>
-        </tr>
-        <tr>
-            <td>Item 3:</td>
-            <td>
-                <select id="item3">
-                    <option value="1">--Select Item--</option>
-                    <option value="Chicken pizza">Chicken pizza</option>
-                    <option value="Vegetable Pizza">Vegetable Pizza</option>
-                    <option value="Chicken Kottu">Chicken Kottu</option>
-                    <option value="Vegetable Kottu">Vegetable Kottu</option>
-                    <option value="Water Bottle ">Water Bottle </option>
-                </select>
-            </td>
-            <td><input type="number" value="0" id="q3"></td>
-            <td><input type="text" id="p3"></td>
-        </tr>
-        <tr>
-            <td>Item 4:</td>
-            <td>
-                <select id="item4">
-                    <option value="1">--Select Item--</option>
-                    <option value="Chicken pizza">Chicken pizza</option>
-                    <option value="Vegetable Pizza">Vegetable Pizza</option>
-                    <option value="Chicken Kottu">Chicken Kottu</option>
-                    <option value="Vegetable Kottu">Vegetable Kottu</option>
-                    <option value="Water Bottle ">Water Bottle </option>
-                </select>
-            </td>
-            <td><input type="number" value="0" id="q4"></td>
-            <td><input type="text" id="p4"></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td><input type="submit" class="button" value="Create Bill" onclick=createBill()></td>
-            <td><input type="reset" class="button" value="Clear"></td>
-        </tr>
-    </table>
-</form>-->
-
-<!--<h1>
-                        FIT Food - Order Form</h1>
-                    <table style="background-color:aquamarine;margin-left: 100px;">
-                        <tr>
-                            <td>Payment method: </td>
-                            <td>
-                                <select>
-                                    <option>Credit Card</option>
-                                    <option>Cash</option>
-                                    <option>Crypto</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h2>Address</h2>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>City:</td>
-                            <td>
-                                <input type="text">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Street & Appartment:</td>
-                            <td>
-                                <input type="text">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Mobile: </td>
-                            <td><input type="text" id="" onfocusout="checkmob()"></td>
-                        </tr>
-                    </table>
-                        <br>-->

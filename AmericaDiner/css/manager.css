@@ -14,3 +14,17 @@
 .manager-nav-link a:visited {
     color: black;
 }
+
+.modal-header {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+img.avatar {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.pHeader{
+    font-weight:bold;
+}

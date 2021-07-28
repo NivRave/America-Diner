@@ -8,16 +8,30 @@
 
 .order-item-name{
     height:35px;
-    border:1px solid black;
     font-weight:bold;
 }
 
-.order-item-description {
+.orderItem {
     height: 35px;
-    border: 1px solid black;
+    border: 2px solid black;
 }
 
 .order-item-quantity {
     height: 35px;
     border: 1px solid black;
+}
+
+.modal-header {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.pHeader {
+    font-weight: bold;
 }

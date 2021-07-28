@@ -1,32 +1,24 @@
-﻿function basicSetup() {
-                                                                    /*'light','dirty','desert','drinks'*/
-    this.basicMenu = [new courseObj('Burger', '450g beef burger with american cheese, ranch and lettuce', '55', '50', ' ', 'dirty', 'a'),
-        new courseObj('Dirty Fries', 'Home-made potato chips fried in bacon fat, topped by gravy, bacok, cheddar cheese and green onions', '25', '20', ' ', 'light', 'b'),
-        new courseObj('American Pancakes', 'High carb-High sugar buttermilk pancakes topped with butter and maple syrup', '35', '30', '', 'desert', 'c'),
-        new courseObj('Philly CheeseSteak', 'Bun-Beef-Chilly-Cheese-Bun', '45', '40', '', 'dirty', 'd'),
-        new courseObj('Steak N Eggs', '300g beef fillet, cooked veggies and 2 sunny-side-up eggs', '75', '70', '', 'light', 'e'),
-        new courseObj('Homemade Beer', 'Our 8.9% homemade fruity flavored light-beer', '20', '18', '', 'drinks', 'f'),
-        new courseObj('Becks', '5.2 light-beer', '20', '18', '', 'drinks', 'g'),
-        new courseObj('Grilled Cheese', 'A mix of grilled-cheese with ranch sauce', '27', '25', '', 'light', 'h'),
-        new courseObj('Thanksgiving Turkey', 'Needless to say, isnt it?', '80', '75', '', 'light', 'i'),
-        new courseObj('Smoked Ribs', 'Short cow ribs marinated in BBQ and smoked for as long as there is', '90', '80', '', 'dirty', 'j'),
-        new courseObj('DFDCB', 'Deep fried doritos chicken burger', '55', '50', '', 'dirty', 'k'),
-        new courseObj('Carbonara Pasta', 'Pasta, cream, bacon - mixed', '60', '50', '', 'dirty', 'l'),
-        new courseObj('American Pie', 'American cream pie it is', '35', '30', '', 'desert', 'm')
-    ]
-    //this.basicMenu = [
-    //    '{"name":"Burger","description":"burgers","price":"25","mPrice":"1","img":" ","category":"light","sTags":"a"}',
-    //    '{"name":"Pancakes","description":"panc","price":"2","mPrice":"3","img":" ","category":"dirty","sTags":"b"',
-    //    '{"name":"Carbonara","description":"carbooo","price":"7","mPrice":"1","img":" ","category":"drinks","sTags":"c"',
-    //    //'{"name":" ","description":" ","price":" ","mPrice":" ","img":" ","category":" ","sTags":" "}',
-    //    //'{"name":" ","description":" ","price":" ","mPrice":" ","img":" ","category":" ","sTags":" "}',
-    //    //'{"name":" ","description":" ","price":" ","mPrice":" ","img":" ","category":" ","sTags":" "}',
-    //    //'{"name":" ","description":" ","price":" ","mPrice":" ","img":" ","category":" ","sTags":" "}',
-    //    //'{"name":" ","description":" ","price":" ","mPrice":" ","img":" ","category":" ","sTags":" "}',
-    //    //'{"name":" ","description":" ","price":" ","mPrice":" ","img":" ","category":" ","sTags":" "}',
-    //    '{"name":"Smoked ribs","description":"bbqqs","price":"15","mPrice":"2","img":" ","category":"desert","sTags":"d"}'
-    //]
+﻿/*This is the basic-initial setup "database".
+ * It contains 10 courses from our 4 categories.
+ */
 
+function basicSetup() {
+                                                                    /*Categories: 'light','dirty','desert','drinks' */
+    this.basicMenu = [new courseObj('Burger', '450g beef burger with american cheese, ranch and lettuce', '55', '50', 'BurgerDish.jpg', 'dirty', 'Gluten Dairy'),
+        new courseObj('Dirty Fries', 'Home-made potato chips fried in bacon fat, topped by gravy, bacon, cheddar cheese and green onions', '25', '20', 'DirtyFries.jpg', 'light', 'Dairy Spicy'),
+        new courseObj('American Pancakes', 'High carb-High sugar buttermilk pancakes topped with butter and maple syrup', '35', '30', 'PancakesPlain.jpg', 'desert', 'Gluten Dairy'),
+        new courseObj('Philly CheeseSteak', 'Bun-Beef-Chilly-Cheese-Bun', '45', '40', 'PhillyCheese.jpg', 'dirty', 'Gluten Dairy Spicy'),
+        new courseObj('Steak N Eggs', '300g beef fillet, cooked veggies and 2 sunny-side-up eggs', '75', '70', 'SteakNEggs.jpg', 'light', ''),
+        new courseObj('Homemade Beer', 'Our 8.9% homemade fruity flavored light-beer', '20', '18', 'HomeMadeBeer.jpg', 'drinks', 'Gluten'),
+        new courseObj('Becks', '5.2% light-beer', '20', '18', 'Becks.jpg', 'drinks', 'Gluten'),
+        new courseObj('Grilled Cheese', 'A mix of grilled-cheese with ranch sauce', '27', '25', 'GrilledCheese.jpg', 'light', 'Dairy'),
+        new courseObj('Thanksgiving Turkey', 'Needless to say, isnt it?', '80', '75', 'Turkey.jpg', 'light', ''),
+        new courseObj('Smoked Ribs', 'Short cow ribs marinated in BBQ and smoked for as long as there is', '90', '80', 'SmokedRibs.jpg', 'dirty', 'Spicy'),
+        new courseObj('DFDCB', 'Deep fried doritos chicken burger', '55', '50', 'DeepFriedDoritosBreadedBurger.jpg', 'dirty', 'Gluten Dairy Spicy'),
+        new courseObj('Carbonara Pasta', 'Pasta, cream, bacon - mixed', '60', '50', 'Carbonara.jpg', 'dirty', 'Gluten Dairy'),
+        new courseObj('American Pie', 'American creampie it is', '35', '30', 'AmericanPie.jpg', 'desert', 'Gluten Dairy')
+    ]
+    //Return the created basic menu
     this.getBasicMenu = function () {
         return this.basicMenu;
     }

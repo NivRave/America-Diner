@@ -1,51 +1,57 @@
-﻿function addCourse(courseObj) {//make sure that is gets a json-formatted object
-    var m = localStorage.getItem(JSON.parse('courses'));
-    m.push(courseObj);
-    saveCurrentMenu(m);
+﻿/*Contains the management-related JS methods*/
+
+//Add course method
+function addCourse(courseObj) {
+    var menu = localStorage.getItem(JSON.parse('courses'));
+    menu.push(courseObj);
+    saveCurrentMenu(menu);
 }
 
+//Delete course method
 function deleteCourse(name) {
-    var m = JSON.parse(localStorage.getItem('menu'));
-    var c = JSON.parse(localStorage.getItem('courses'));
-    let i = searchCourse(name);//can't be -1
-    m = remove(i, m);
-    c = remove(i, c);
-    saveCurrentMenu(m);
-    saveCurrentCourses(c);
+    var menu = JSON.parse(localStorage.getItem('menu'));
+    var courses = JSON.parse(localStorage.getItem('courses'));
+    let index = searchCourse(name);
+    menu = remove(index, menu);
+    courses = remove(index, courses);
+    saveCurrentMenu(menu);
+    saveCurrentCourses(courses);
 }
 
-function remove(index, m) {
-    var newM = [];
-    for (i = 0; i < m.length; i++) {
+//Remove a certain index obj from course array
+function remove(index, menu) {
+    var newMenu = [];
+    for (let i = 0; i < menu.length; i++) {
         if (i == index) continue;
         else {
-            newM.push(m[i]);
+            newMenu.push(menu[i]);
         }
     }
-    return newM;
+    return newMenu;
 }
 
+//Reset categories HTML content
 function updateMenu(menuObj) {
     for (c in this.categories) {
         document.getElementById(c).innerHTML = '';
     }
 }
 
+//Update the course options for the remove course select item
 function setRemCourses() {
     var str = '';
-    let c = JSON.parse(localStorage.getItem('courses'));
-    console.log(c);
-    for (i = 0; i < c.length; i++) {
-        //let course = c[i];
-        str += '<option value="' + c[i].name + '">' + c[i].name + '</option>';
+    let courses = JSON.parse(localStorage.getItem('courses'));
+    for (let i = 0; i < courses.length; i++) {
+        str += '<option value="' + courses[i]['name'] + '">' + courses[i]['name'] + '</option>';
     }
     document.getElementById('courseNames').innerHTML = str;
 }
 
+//Returns the index of a given course. Used with select that only contains valid names so -1 will never be returned.
 function searchCourse(name) {
-    var m = JSON.parse(localStorage.getItem('menu'));
-    for (i = 0; i < m.length; i++) {
-        if (m[i].name == name) {
+    var menu = JSON.parse(localStorage.getItem('menu'));
+    for (let i = 0; i < menu.length; i++) {
+        if (menu[i].name == name) {
             return i;
         }
     }

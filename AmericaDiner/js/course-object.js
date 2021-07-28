@@ -1,28 +1,21 @@
-﻿function courseObj (name, description, price, mprice, img, category, sTags) {
+﻿/*Here a course object is implemented.*/
+function courseObj(name, description, price, mprice, img, category, stags) {
     this.name = name;
     this.description = description;
     this.price = price;
     this.mprice = mprice
     this.img = img;
     this.category = category;
-    this.sTags = sTags;
+    this.stags = stags;
 }
 
+//Converts a course to JSON format
 function courseToJson(course) {
-    let c = { "name": course.name, "description": course.description, "price": course.price, "mprice": course.mprice, "img": course.img, "category": course.category, "stags": course.stags };
-    return c;
+    let courseJSON = { "name": course.name, "description": course.description, "price": course.price, "mprice": course.mprice, "img": course.img, "category": course.category, "stags": course.stags };
+    return courseJSON;
 }
 
-createMenu = function (courses) {
-    var menuObj = [];
-    for (i = 0; i < this.courses.length; i++) {
-        let o = { "name": courses[i].name, "description": courses[i].description, "price": courses[i].price, "mprice": courses[i].mprice, "img": courses[i].img, "category": courses[i].category, "stags": courses[i].stags };
-        menuObj.push(o);
-    }
-    
-    //saveCurrentMenu(this.menu);
-}
-
+//Updates the LS with giver courses object
 function updateCourses(courses) {
     localStorage.setItem('courses', JSON.stringify(courses));
 }

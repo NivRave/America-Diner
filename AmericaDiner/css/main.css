@@ -11,7 +11,7 @@ a {
 }
 
     .title-header button:hover {
-        color: blue; /*change color to blue when hovering over*/
+        color: #2832C2; /*change color to #2832C2 when hovering over*/
     }
 
 /* Login page styling*/
@@ -23,9 +23,9 @@ a {
     text-align: center;
 }
 
-/*primary text color - ADD SECOND BLUE AND ADJUST RED*/
+/*primary text color - ADD SECOND #2832C2 AND ADJUST #d21404*/
 .primary-color {
-    color: red;
+    color: #d21404;
 }
 
 #header {
@@ -41,15 +41,15 @@ a {
 }
 
 .generic-btn {
-    color: blue;
+    color: #2832C2;
     font-size: 40px;
-    border: 2px solid red;
+    border: 2px solid #d21404;
     transition: all 1s ease-in-out;
 }
 
     .generic-btn:hover {
-        color: red;
-        border: 2px solid blue;
+        color: #d21404;
+        border: 2px solid #2832C2;
         background-color: rgba(255, 255, 255, 0.3);
     }
 
@@ -61,6 +61,8 @@ a {
     background: white;
     padding: 20px 20px;
     transition: all 1.5s ease;
+    border: 1px solid;
+    border-color: lightgray;
 }
 
 .navbar-background{
@@ -72,31 +74,31 @@ a {
     transition:all 1s ease;
 }
 .navbar-brand:hover {
-    color:blue;
+    color:#2832C2;
 }
 
 .nav-link{
-    color:red;
+    color:#d21404;
     text-decoration:none;
     transition: all 2s ease;
-    font-size: 23px;
+    font-size: 28px;
 }
 
 .nav-link:hover{
-    color:blue;
+    color:#2832C2;
 }
 
 .nav-btn{
     background:transparent;
-    color:red;
-    border:2px solid blue;
+    color:#d21404;
+    border:2px solid #2832C2;
     font-size:23px;
     transition: all 2s ease;
 }
 
 .nav-btn:hover{
-    color:blue;
-    border: 2px solid red;
+    color:#2832C2;
+    border: 2px solid #d21404;
     transform:rotate(15deg);
 }
 
@@ -110,24 +112,12 @@ a {
     width:30px;
     height:3px;
     margin:5px;
-    background:red;
+    background:#d21404;
     transition:all 0.5s ease;
 }
 
-/*.change-navbar .bar1 {
-    transform: rotate(-45deg) translate(-5px,6px);
-}
-
-.change-navbar .bar2 {
-    opacity: 0;
-}
-
-.change-navbar .bar3 {
-    transform: rotate(45deg) translate(-5px,-6px);
-}*/
-
 /*Special items - photos*/
-#special-items {
+#gallery {
     background: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.8)),url(../img/main/Elvis.jpg);
     background-position: center;
     background-size: cover;
@@ -165,8 +155,8 @@ a {
 }
 
 .item-link:hover {
-    color: red;
-    text-shadow: 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px blue, 0 0 4px blue, 0 0 4px blue, 0 0 4px blue, 0 0 4px blue, 0 0 4px blue, 0 0 4px blue, 0 0 4px blue, 0 0 4px blue, 0 0 4px blue, 0 0 4px blue, 0 0 4px blue;
+    color: #d21404;
+    text-shadow: 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px white, 0 0 4px #2832C2, 0 0 4px #2832C2, 0 0 4px #2832C2, 0 0 4px #2832C2, 0 0 4px #2832C2, 0 0 4px #2832C2, 0 0 4px #2832C2, 0 0 4px #2832C2, 0 0 4px #2832C2, 0 0 4px #2832C2, 0 0 4px #2832C2, 0 0 4px #2832C2;
 }
 
 .item-container:hover{
@@ -177,11 +167,11 @@ a {
 /*Single menu item*/
 
 .item-name{
-    color:blue;
+    color:#2832C2;
 }
 
 .item-description{
-    color:red;
+    color:#d21404;
 }
 
 .item-price{
